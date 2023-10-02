@@ -7,4 +7,5 @@ numero_aleatorio = random.randint(1, 10)
 if numero_aleatorio % 2 == 0:
     print(f'O número {numero_aleatorio} é par.')
 else:
-    print(f'O número {numero_aleatorio} é ímpar.')
+    print(f'O número {numero_aleatorio} é ímpar.');
+//teste do github
