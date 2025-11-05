@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas Simples</title>
+    <style>
+        /* CSS para estilização da página */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .task-form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .task-form input, .task-form select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .task-form input[type="text"] {
+            flex-grow: 1;
+        }
+        .task-form button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .task-form button:hover {
+            background-color: #2980b9;
+        }
+        #task-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .task-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            border-left: 5px solid #3498db;
+        }
+        .task-item.priority-alta { border-color: #e74c3c; }
+        .task-item.priority-media { border-color: #f39c12; }
+        .task-item.priority-baixa { border-color: #2ecc71; }
+        
+        .task-item span {
+            flex-grow: 1;
+        }
+
+        .task-actions button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-left: 10px;
+            font-size: 18px;
+            color: #7f8c8d;
+        }
+        .task-actions button:hover {
+            color: #34495e;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Meu Gerenciador de Tarefas</h1>
+        
+        <!-- Formulário para adicionar/editar tarefas -->
+        <div class="task-form">
+            <input type="hidden" id="task-id">
+            <input type="text" id="task-description" placeholder="O que precisa ser feito?">
+            <select id="task-priority">
+                <option value="baixa">Prioridade Baixa</option>
+                <option value="media">Prioridade Média</option>
+                <option value="alta">Prioridade Alta</option>
+            </select>
+            <button onclick="addOrUpdateTask()">Adicionar</button>
+        </div>
+
+        <!-- Lista de tarefas -->
+        <ul id="task-list">
+            <!-- As tarefas serão inseridas aqui via JavaScript -->
+        </ul>
+    </div>
+
+    <script>
+        // JavaScript para a lógica da aplicação
+        let tasks = [];
+        let nextId = 1;
+
+        function renderTasks() {
+            const taskList = document.getElementById('task-list');
+            taskList.innerHTML = ''; // Limpa a lista antes de renderizar
+            tasks.forEach(task => {
+                const li = document.createElement('li');
+                li.className = `task-item priority-${task.priority}`;
+                li.innerHTML = `
+                    <span>${task.description}</span>
+                    <div class="task-actions">
+                        <button onclick="editTask(${task.id})">✏️</button>
+                        <button onclick="deleteTask(${task.id})">🗑️</button>
+                    </div>
+                `;
+                taskList.appendChild(li);
+            });
+        }
+
+        function addOrUpdateTask() {
+            const descriptionInput = document.getElementById('task-description');
+            const priorityInput = document.getElementById('task-priority');
+            const hiddenIdInput = document.getElementById('task-id');
+            const description = descriptionInput.value.trim();
+            
+            if (!description) {
+                alert('A descrição da tarefa não pode ser vazia.');
+                return;
+            }
+
+            const taskId = hiddenIdInput.value;
+            if (taskId) {
+                // Atualizar tarefa existente
+                const task = tasks.find(t => t.id == taskId);
+                task.description = description;
+                task.priority = priorityInput.value;
+                document.querySelector('.task-form button').innerText = 'Adicionar';
+            } else {
+                // Adicionar nova tarefa
+                const newTask = {
+                    id: nextId++,
+                    description: description,
+                    priority: priorityInput.value
+                };
+                tasks.push(newTask);
+            }
+            
+            // Limpar formulário
+            descriptionInput.value = '';
+            priorityInput.value = 'baixa';
+            hiddenIdInput.value = '';
+            
+            renderTasks();
+        }
+
+        function editTask(id) {
+            const task = tasks.find(t => t.id === id);
+            document.getElementById('task-description').value = task.description;
+            document.getElementById('task-priority').value = task.priority;
+            document.getElementById('task-id').value = task.id;
+            document.querySelector('.task-form button').innerText = 'Salvar';
+        }
+
+        function deleteTask(id) {
+            if (confirm('Tem certeza que deseja excluir esta tarefa?')) {
+                tasks = tasks.filter(t => t.id !== id);
+                renderTasks();
+            }
+        }
+
+        // Renderização inicial
+        renderTasks();
+    </script>
+</body>
+</html>
