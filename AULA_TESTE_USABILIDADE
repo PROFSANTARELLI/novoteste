@@ -1,0 +1,26 @@
+Teste de Usabilidade de um Gerenciador de Tarefas
+
+Objetivo: avaliar a experiência do usuário de uma nova aplicação de gestão de tarefas. O objetivo não é encontrar "bugs" de código, mas sim "pontos de fricção" na interface que possam confundir ou frustrar um usuário.A Atividade é dividida em 4 partes:
+O Sistema Sob Teste: O código da página de gestão de tarefas.
+Como Rodar a Página: Instruções para executar a aplicação localmente.
+O Roteiro de Teste (Modelo): O documento que guiará a sessão de testes.
+Como Realizar os Testes: Um guia passo a passo sobre a metodologia do teste de usabilidade.
+
+Parte 1: O Sistema para Teste
+- Arquivo HTML único que contém o CSS e o JavaScript necessários. Isso facilita para gerenciar apenas um arquivo.
+- Nome do Arquivo: task_manager.html
+
+Parte 2: Como Rodar a Página Localmente
+1 - Esta aplicação não precisa de um servidor. Ela pode ser executada diretamente no navegador.
+2 - Crie o Arquivo: Abra um editor de texto simples (como Bloco de Notas).
+3 - Copie e Cole: Copie todo o código e cole no editor de texto.
+4 - Salve o Arquivo: Salve o arquivo com o nome task_manager.html. É crucial que a extensão seja .html.
+5 - Abra no Navegador: Encontre o arquivo que você salvou no seu computador e dê um duplo clique nele. Ele será aberto no seu navegador padrão (Chrome, Firefox, Edge, etc.) e a aplicação estará pronta para ser usada.
+
+Parte 3: O Roteiro de Teste de Usabilidade (
+Este é o documento que os alunos usarão para guiar a sessão de teste. Eles devem preenchê-lo enquanto observam o "usuário".
+ROTEIRO DE TESTE DE USABILIDADE - GERENCIADOR DE TAREFAS
+Informações da Sessão:
+Nome do Testador (Aluno): _________________________
+Nome do Usuário (Colega): _________________________
+Data: ____/____/______
