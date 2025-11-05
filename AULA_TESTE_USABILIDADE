@@ -10,6 +10,7 @@ Parte 1: O Sistema para Teste
 - Arquivo HTML único que contém o CSS e o JavaScript necessários. Isso facilita para gerenciar apenas um arquivo.
 - Nome do Arquivo: task_manager.html
 
+
 Parte 2: Como Rodar a Página Localmente
 1 - Esta aplicação não precisa de um servidor. Ela pode ser executada diretamente no navegador.
 2 - Crie o Arquivo: Abra um editor de texto simples (como Bloco de Notas).
@@ -17,10 +18,30 @@ Parte 2: Como Rodar a Página Localmente
 4 - Salve o Arquivo: Salve o arquivo com o nome task_manager.html. É crucial que a extensão seja .html.
 5 - Abra no Navegador: Encontre o arquivo que você salvou no seu computador e dê um duplo clique nele. Ele será aberto no seu navegador padrão (Chrome, Firefox, Edge, etc.) e a aplicação estará pronta para ser usada.
 
-Parte 3: O Roteiro de Teste de Usabilidade (
-Este é o documento que os alunos usarão para guiar a sessão de teste. Eles devem preenchê-lo enquanto observam o "usuário".
-ROTEIRO DE TESTE DE USABILIDADE - GERENCIADOR DE TAREFAS
-Informações da Sessão:
-Nome do Testador (Aluno): _________________________
-Nome do Usuário (Colega): _________________________
-Data: ____/____/______
+
+Parte 3: O Roteiro de Teste de Usabilidade
+Baixe o arquivo TESTE_USABILIDADE_GERENCIADOR_TAREFA.zip
+Descompacte o arquivo para obter o arquivo em word
+Leia as instruções do documento para realizar os testes
+
+
+Parte 4: Como Realizar os Testes
+Instruções para os Alunos:
+1 - Formem Duplas: Um aluno será o "Testador" (que conduz o teste e anota) e o outro será o "Usuário" (que interage com a página).
+
+2 - Preparação do Ambiente (Testador):
+- Abra a página task_manager.html no navegador no computador que será usado.
+- Tenha o "Roteiro de Teste" em mãos para fazer anotações.
+
+3 - Conduzindo a Sessão (Testador):
+- Leia a Introdução: Comece lendo a introdução do roteiro para o seu colega (o "Usuário"). Isso é crucial para que ele se sinta à vontade.
+- Apresente a Primeira Tarefa: Leia a descrição da Tarefa 1. Não dê dicas de como fazê-la. Por exemplo, diga "Adicione a tarefa...", não "Clique no campo de texto e digite...".
+- Observe e Anote: Enquanto o usuário realiza a tarefa, fique em silêncio. Observe atentamente: Onde ele clica? Ele hesita? Ele parece confuso? Anote tudo na coluna de "Observações". Se o usuário falar algo (lembre-o de "pensar em voz alta"), anote também.
+- Preencha a Tabela: Após cada tarefa, preencha se o usuário conseguiu completá-la e como foi a experiência.
+- Prossiga pelas Tarefas: Repita o processo para todas as tarefas do roteiro. Se o usuário ficar completamente travado, você pode dar uma pequena ajuda, mas anote que ele precisou de ajuda.
+- Faça as Perguntas Finais: Ao final de todas as tarefas, faça as perguntas pós-teste e anote as respostas detalhadamente.
+
+4 - Análise dos Resultados (Testador):
+- Depois que a sessão terminar, revise suas anotações.
+- Identifique os padrões. O usuário ficou confuso no mesmo ponto mais de uma vez?
+- Preencha a seção "Resumo do Testador", sintetizando os problemas mais críticos e propondo soluções práticas.
